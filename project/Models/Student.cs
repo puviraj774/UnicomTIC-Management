@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace project.Models
 {
-    internal class Student
+    internal class course
     {
         public int Id { get; set; }
         public string Name { get; set; }

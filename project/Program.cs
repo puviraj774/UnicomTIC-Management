@@ -21,14 +21,15 @@ namespace project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            if (IsUsersTableEmpty())
-            {
-                Application.Run(new CreateAdmin());
-            }
-            else
-            {
-                Application.Run(new Login());  
-            }
+            //if (IsUsersTableEmpty())
+            //{
+            //    Application.Run(new CreateAdmin());
+            //}
+            //else
+            //{
+            //    Application.Run(new Login());  
+            //}
+            Application.Run(new AdminDashboard());
         }
 
         private static bool IsUsersTableEmpty()

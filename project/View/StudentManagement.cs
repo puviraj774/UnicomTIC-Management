@@ -1,4 +1,5 @@
-﻿using System;
+﻿using project.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace project.View
         public StudentManagement()
         {
             InitializeComponent();
+            LoadCourses();
+        }
+        private void LoadCourses()
+        {
+            CourseControllers courseControllers = new CourseControllers();
+            var courses = courseControllers.GetCourseList();
+
+            course_cob.Items.Clear();
+            foreach ( var course in courses )
+            {
+                course_cob.Items.Add( course.Name );
+            }
         }
     }
 }

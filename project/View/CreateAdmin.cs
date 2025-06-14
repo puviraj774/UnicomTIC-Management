@@ -38,6 +38,8 @@ namespace project.View
 
             _adminController.CreateAdmin(admin);
             MessageBox.Show("Admin account created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            username_txt.Clear();
+            password_txt.Clear();
 
             AdminDashboard adminDashboard = new AdminDashboard();
             adminDashboard.ShowDialog();

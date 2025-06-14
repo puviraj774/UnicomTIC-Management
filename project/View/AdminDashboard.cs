@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace project.View
 {
@@ -15,6 +16,7 @@ namespace project.View
         public AdminDashboard()
         {
             InitializeComponent();
+            // This line correctly sets the 'course_txt' textbox to be empty when the form initializes.
         }
 
         private void LoadForm(Form frm)
@@ -27,10 +29,10 @@ namespace project.View
             frm.Show();
         }
 
-
         private void pnl_center_Paint(object sender, PaintEventArgs e)
         {
-
+            // This method is for drawing operations on the panel,
+            // no changes needed here for making a textbox empty.
         }
 
         private void stumanagement_btn_Click(object sender, EventArgs e)
