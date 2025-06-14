@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="Controller\AdminController.cs" />
     <Compile Include="Controller\CourseControllers.cs" />
+    <Compile Include="Controller\LecturerController.cs" />
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="Data\DatabaseConnection.cs" />
     <Compile Include="Data\Tablemanagement.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -68,35 +70,35 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\AdminDashboard.cs">
+    <Compile Include="View\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AdminDashboard.Designer.cs">
-      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    <Compile Include="View\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CourseManagement.cs">
+    <Compile Include="View\CourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CourseManagement.Designer.cs">
-      <DependentUpon>CourseManagement.cs</DependentUpon>
+    <Compile Include="View\CourseForm.Designer.cs">
+      <DependentUpon>CourseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CreateAdmin.cs">
+    <Compile Include="View\DashboardAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CreateAdmin.Designer.cs">
-      <DependentUpon>CreateAdmin.cs</DependentUpon>
+    <Compile Include="View\DashboardAdmin.Designer.cs">
+      <DependentUpon>DashboardAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LecturerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LecturerForm.Designer.cs">
+      <DependentUpon>LecturerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\StudentManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\StudentManagement.Designer.cs">
-      <DependentUpon>StudentManagement.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -108,20 +110,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\AdminDashboard.resx">
-      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="View\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CourseManagement.resx">
-      <DependentUpon>CourseManagement.cs</DependentUpon>
+    <EmbeddedResource Include="View\CourseForm.resx">
+      <DependentUpon>CourseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CreateAdmin.resx">
-      <DependentUpon>CreateAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="View\DashboardAdmin.resx">
+      <DependentUpon>DashboardAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LecturerForm.resx">
+      <DependentUpon>LecturerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\StudentManagement.resx">
-      <DependentUpon>StudentManagement.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

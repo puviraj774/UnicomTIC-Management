@@ -9,26 +9,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using project.Data;
-using System.Data.SQLite;
 
 namespace project.View
 {
-    public partial class Login : Form
+    public partial class AdminForm : Form
     {
-        public Login()
+        public AdminForm()
         {
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void AdminForm_Load(object sender, EventArgs e)
         {
             txtusername.Text = "Username";
             txtpassword.Text = "Password";
             txtusername.ForeColor = Color.Gray;
-            txtpassword.ForeColor = Color.Gray;
+            txtpassword.ForeColor = Color.Gray; 
 
-            btnhide.Visible = false;
+            btnhide.Visible = false; 
         }
 
         private void txtusername_Enter(object sender, EventArgs e)
@@ -55,7 +53,7 @@ namespace project.View
             {
                 txtpassword.Text = string.Empty;
                 txtpassword.ForeColor = Color.Black;
-                txtpassword.UseSystemPasswordChar = true; 
+                txtpassword.UseSystemPasswordChar = true; // Show password as hidden
             }
         }
 
@@ -65,11 +63,12 @@ namespace project.View
             {
                 txtpassword.Text = "Password";
                 txtpassword.ForeColor = Color.Gray;
-                txtpassword.UseSystemPasswordChar = false; 
+                txtpassword.UseSystemPasswordChar = false; // Show password as plain text
             }
+
         }
 
-        private void btnlogin_Click(object sender, EventArgs e)
+        private void btnsignup_Click(object sender, EventArgs e)
         {
             if (txtusername.Text == "Username" || txtpassword.Text == "Password" || string.IsNullOrWhiteSpace(txtusername.Text) || string.IsNullOrWhiteSpace(txtpassword.Text))
             {
@@ -77,35 +76,27 @@ namespace project.View
                 return;
             }
 
-            User user = new User
+            Admin admin = new Admin
             {
-                UserName = txtusername.Text.Trim(),
+                Username = txtusername.Text.Trim(),
                 Password = txtpassword.Text.Trim()
             };
 
-            UserController userController = new UserController();
-            string role = userController.GetRole(user.UserName, user.Password);
+            AdminController adminController = new AdminController();
+            adminController.CreateAdmin(admin); 
 
-            if (role == "Admin")
-            {
-                this.Hide();
-                DashboardAdmin dashboardAdmin = new DashboardAdmin();
-                dashboardAdmin.ShowDialog();
-                this.Close();
-            }
-            txtusername.Clear();
-            txtpassword.Clear();
+            this.Hide();
+            DashboardAdmin dashboardAdmin = new DashboardAdmin();
+            dashboardAdmin.ShowDialog();
+
+
         }
 
-        private void btnexit_Click(object sender, EventArgs e)
+        private void btnshow_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-
-            
+            txtpassword.UseSystemPasswordChar = false;
+            btnshow.Visible = false;
+            btnhide.Visible = true; 
         }
 
         private void btnhide_Click(object sender, EventArgs e)
@@ -117,14 +108,18 @@ namespace project.View
             }
             txtpassword.UseSystemPasswordChar = true;
             btnhide.Visible = false;
-            btnshow1.Visible = true;
+            btnshow.Visible = true;
         }
 
-        private void btnshow1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            txtpassword.UseSystemPasswordChar = false;
-            btnshow1.Visible = false;
-            btnhide.Visible = true;
+            var result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+                
+            }
+            
         }
     }
 }

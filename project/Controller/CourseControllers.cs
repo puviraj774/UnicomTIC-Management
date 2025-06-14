@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace project.Controller
 { 
-    internal class CourseControllers
+    internal class CourseController
     {
+        // This method adds a new course to the database.
         public void AddCourse(Course course)
         {
             using (var conn = DatabaseConnection.GetConnection())
@@ -21,11 +22,26 @@ namespace project.Controller
                 using (var cmd = new SQLiteCommand(Query, conn))
                 {
                     cmd.Parameters.AddWithValue("@name", course.Name);
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        if (ex.ResultCode == SQLiteErrorCode.Constraint)
+                        {
+                            throw new Exception("Course name already exists.");
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
                 }
             }
         }
 
+        // This method Delete an existing course in the database.
         public void DeleteCourse(int CourseId)
         {
             using (var conn = DatabaseConnection.GetConnection())
@@ -36,6 +52,7 @@ namespace project.Controller
             }
         }
 
+        
         public Course GetCourseById(int id)
         {
             using (var conn = DatabaseConnection.GetConnection())
@@ -57,8 +74,10 @@ namespace project.Controller
             }
 
             return null;
+
         }
 
+        // This method retrieves a list of all courses from the database.
         public List<Course> GetCourseList()
         {
             var courses = new List<Course>();
