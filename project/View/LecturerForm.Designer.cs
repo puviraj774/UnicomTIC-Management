@@ -55,9 +55,15 @@
             this.btndelete.TabIndex = 0;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // dgvlecturer
             // 
+            this.dgvlecturer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvlecturer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvlecturer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvlecturer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvlecturer.Location = new System.Drawing.Point(123, 395);
             this.dgvlecturer.Name = "dgvlecturer";
@@ -65,6 +71,7 @@
             this.dgvlecturer.RowTemplate.Height = 28;
             this.dgvlecturer.Size = new System.Drawing.Size(461, 211);
             this.dgvlecturer.TabIndex = 1;
+            this.dgvlecturer.SelectionChanged += new System.EventHandler(this.dgvlecturer_SelectionChanged);
             // 
             // label1
             // 
@@ -108,6 +115,7 @@
             this.btnedit.TabIndex = 6;
             this.btnedit.Text = "Edit";
             this.btnedit.UseVisualStyleBackColor = true;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // btnadd
             // 
@@ -117,6 +125,7 @@
             this.btnadd.TabIndex = 7;
             this.btnadd.Text = "Add";
             this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // label3
             // 
@@ -138,6 +147,7 @@
             this.pbback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbback.TabIndex = 9;
             this.pbback.TabStop = false;
+            this.pbback.Click += new System.EventHandler(this.pbback_Click);
             // 
             // txtusername
             // 

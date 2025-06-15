@@ -38,7 +38,7 @@ namespace project.View
         private void btnlecturer_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LecturerForm lecturerForm = new LecturerForm();
+            LecturerForm lecturerForm = new LecturerForm(this);
             lecturerForm.ShowDialog();
         }
     }
