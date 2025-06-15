@@ -39,6 +39,11 @@ namespace project.View
             var lecturerList = lecturerController.GetLecturerList();
 
             dgvlecturer.DataSource = lecturerList;
+
+            dgvlecturer.Columns["SubjectId"].Visible = false;
+            dgvlecturer.Columns["Subject"].Visible = false;
+            dgvlecturer.Columns["Username"].Visible = false;
+            dgvlecturer.Columns["Password"].Visible = false;
         }        
 
         public void ClearFields()

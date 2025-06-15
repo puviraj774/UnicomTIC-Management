@@ -180,8 +180,10 @@ namespace project.Controller
         {
             using (var conn = DatabaseConnection.GetConnection())
             {
-                var cmd = new SQLiteCommand("SELECT Username, Password FROM Users WHERE LinkedId = @Id", conn);
+                var cmd = new SQLiteCommand("SELECT Username, Password FROM Users WHERE LinkedId = @Id AND Role = @role", conn);
                 cmd.Parameters.AddWithValue("@Id", id);
+                cmd.Parameters.AddWithValue("@role", "Lecturer");
+
                 using (var reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())

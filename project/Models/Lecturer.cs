@@ -12,10 +12,7 @@ namespace project.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string NIC { get; set; }
-
-        [Browsable(false)]
         public string Username { get; set; }
-        [Browsable(false)]
         public string Password { get; set; }
         public int SubjectId { get; set; }
         public string Subject { get; set; }

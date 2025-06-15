@@ -41,5 +41,12 @@ namespace project.View
             LecturerForm lecturerForm = new LecturerForm(this);
             lecturerForm.ShowDialog();
         }
+
+        private void btnsubject_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SubjectForm subjectForm = new SubjectForm();
+            subjectForm.ShowDialog();
+        }
     }
 }

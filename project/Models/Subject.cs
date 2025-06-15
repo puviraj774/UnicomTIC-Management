@@ -12,5 +12,7 @@ namespace project.Models
         public string Name { get; set; }
         public int CourseId { get; set; }
         public string CourseName { get; set; }
+        public int LecturerId { get; set; }
+        public string LecturerName { get;set; }
     }
 }
